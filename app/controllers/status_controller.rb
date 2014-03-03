@@ -17,10 +17,12 @@ class StatusController < ApplicationController
 
 	def read
 		s = Status.last
-		if s.open
-			render :text => "Open"
-		else
-			render :text => "Closed"
+		if s != nil
+			if s.open
+				render :text => "Open"
+			else
+				render :text => "Closed"
+			end
 		end
 	end
 end	
