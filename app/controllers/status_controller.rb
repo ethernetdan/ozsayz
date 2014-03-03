@@ -21,7 +21,7 @@ class StatusController < ApplicationController
 			if s.open
 				@status = "open"
 			else
-				@status = "closed"
+				@status = "close"
 			end
 		end
 	end
