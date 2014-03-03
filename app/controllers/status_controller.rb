@@ -19,9 +19,9 @@ class StatusController < ApplicationController
 		s = Status.last
 		if s != nil
 			if s.open
-				render :text => "Open"
+				@status = "open"
 			else
-				render :text => "Closed"
+				@status = "closed"
 			end
 		end
 	end
