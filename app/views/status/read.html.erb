@@ -1,8 +1,23 @@
+
+<% content_for :title, "says " + @status + "!" %>
 <link href='http://fonts.googleapis.com/css?family=Wire One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet' type='text/css'>
-<%= image_tag("title.png", style: "margin-left: auto;
-    margin-right: auto; display: block;") %>
-<p style='text-align: center; width: 650px; font-size: 22px; margin: 45px auto; font-family: "Advent Pro", Arial; font-weight: 700'>Who is Oz? Oz is a magical werebat that inhabits Collider. He tells outsiders whether Collider is open for business or whether they should stay away from his evil prowess (he is suffering from a condition called sleepmurders). He is the mister of Collider, surrounded by his scandalous bunny mistresses. He only comes out to greet those who are worthy. Come hack with us and see if you get a visit from him.</p>
-<%= image_tag(@status+".png", style: "margin-left: auto;
-    margin-right: auto; display: block;") %>
-    <h1 style='text-align: center; font-weight:100; font-size: 80px; text-transform:uppercase; font-family: "Advent Pro", Arial; margin-top: 0px'>Collider is <%=@status%>!</h1>
+<link href='http://fonts.googleapis.com/css?family=Esteban' rel='stylesheet' type='text/css'>
+<%= image_tag("title.png", class: "images") %>
+<p class='story'>Who is Oz? Oz is a magical werebat that inhabits Collider. He tells outsiders whether Collider is open for business or whether they should stay away from his evil prowess (he is suffering from a condition called sleepmurders). He is the mister of Collider, surrounded by his scandalous bunny mistresses. He only comes out to greet those who are worthy. Come hack with us and see if you get a visit from him.</p>
+<%= image_tag(@status+".png", class: "images") %>
+    <h1 class='status'>Collider is <%=@status%>!</h1>
+<p class='credits'>A thrilling exposé by <a href="https://twitter.com/pvorozh" class='credits'>@pvorozh</a> and <a class='credits' href="https://twitter.com/jollyswagman12">@jollyswagman12</a></p>
+<%= image_tag("bunny.png", id: "bunny") %>
+
+<script type="text/javascript">
+$(function() {
+	$('#bunny').hover(function (event) {
+	  var origsrc = $(this).attr('src');
+	        var src = '';
+	        if (origsrc == '/images/bunny.png') src = '/images/bunnyevil.png';
+	        if (origsrc == '/images/bunnyevil.png') src = '/images/bunny.png';
+	        $(this).attr('src', src);
+	});
+});
+</script>
