@@ -1,6 +1,6 @@
 class StatusController < ApplicationController
 	def update
-		if params[:pass] == "hellocollider!!!"
+		if params[:pass] == "hellocollider"
 			s = Status.last
 			if s == nil
 				s = Status.new
@@ -12,7 +12,7 @@ class StatusController < ApplicationController
 			end
 			s.save()
 			render :text => s.open
-		end
+		end 	
 	end
 
 	def read
