@@ -38,3 +38,10 @@
  	position: fixed;
  	top: -455;
  }
+
+ #dance {
+ 	position: fixed;
+    left: -515px;
+    bottom: 0;
+
+ }

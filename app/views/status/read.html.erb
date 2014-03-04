@@ -1,14 +1,16 @@
 
 <% content_for :title, "says " + @status + "!" %>
-<%= image_tag("title.png", class: "images") %>
+<%= image_tag("title.png", class: "images", usemap: "#arrowmap") %>
 <p class='story'>Who is Oz? Oz is a magical werebat that inhabits Collider. He tells outsiders whether Collider is open for business or whether they should stay away from his evil prowess (he is suffering from a condition called sleepmurders). He is the mister of Collider, surrounded by his scandalous bunny mistresses. He only comes out to greet those who are worthy. Come hack with us and see if you get a visit from him.</p>
 <%= image_tag(@status+".png", class: "images", id: "status") %>
     <h1 class='status'>Collider is <%=@status%>!</h1>
 <p class='credits'>A thrilling exposé by <a href="https://twitter.com/pvorozh" class='credits'>@pvorozh</a> and <a class='credits' href="https://twitter.com/jollyswagman12">@jollyswagman12</a></p>
 <%= image_tag("bunny.png", id: "bunny", usemap: "#bunmap") %>
-<map id="bunmap" name="bunmap"><area shape="circle" alt="" title="" coords="43,81,3" />
+<map id="bunmap" name="bunmap"><area shape="circle" alt="" title="" coords="43,81,3" /></map>
+<map id="arrowmap" name="arrowmap"><area shape="rect" alt="" title="" coords="608,82,645,121"	/></map>
 
-<%= image_tag("wreckbunny.png", id: "wreck") %>
+<%= image_tag("#", id: "wreck") %>
+<%= image_tag("dance.png", id: "dance") %>
 
 <script type="text/javascript">
 $(function() {
@@ -19,9 +21,17 @@ $(function() {
         if (origsrc == '/images/bunnyevil.png') src = '/images/bunny.png';
         $(this).attr('src', src);
 	});
+	$('#arrowmap').click(function (event) {
+		$("#dance").attr('src', "/images/dance.png")
+		$("#dance").css("left", -515);
+		$("#dance").animate({left:450},3000).delay(200).animate({left:-515},3000);
+	});	
 	$('#bunmap').click(function (event) {
+		$("#wreck").attr('src', "/images/wreckbunny.png")
 		$("#wreck").css("top", -455);
 		$("#wreck").animate({top:0},1000).delay(500).animate({top:-455},1000);
-	});
+	});	
+
+	
 });
 </script>
