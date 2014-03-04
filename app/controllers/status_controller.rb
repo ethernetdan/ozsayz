@@ -5,6 +5,7 @@ class StatusController < ApplicationController
 			if s == nil
 				s = Status.new
 			end
+			s.open_will_change!
 			if params[:open] == "1"
 				s.open = true
 			elsif params[:open] == "0"
@@ -17,7 +18,7 @@ class StatusController < ApplicationController
 
 	def read
 		s = Status.last
-		if s != nil && (Time.zone.now - s.updated_at < 3800)
+		if s != nil && (Time.zone.now - s.updated_at < 3600)
 			if s.open
 				@status = "open"
 			else
