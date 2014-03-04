@@ -5,7 +5,6 @@ class StatusController < ApplicationController
 			if s == nil
 				s = Status.new
 			end
-			s.open_will_change!
 			if params[:open] == "1"
 				s.open = true
 			elsif params[:open] == "0"
