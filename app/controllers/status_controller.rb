@@ -10,6 +10,7 @@ class StatusController < ApplicationController
 			elsif params[:open] == "0"
 				s.open = false
 			end
+			s.stupid = SecureRandom.hex
 			s.save()
 			render :text => s.open
 		end 	
