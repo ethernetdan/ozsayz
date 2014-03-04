@@ -17,12 +17,14 @@ class StatusController < ApplicationController
 
 	def read
 		s = Status.last
-		if s != nil
+		if s != nil && (Time.zone.now - s.updated_at < 3800)
 			if s.open
 				@status = "open"
 			else
 				@status = "closed"
 			end
+		else
+			@status = "broken"
 		end
 	end
 

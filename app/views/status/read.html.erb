@@ -2,19 +2,26 @@
 <% content_for :title, "says " + @status + "!" %>
 <%= image_tag("title.png", class: "images") %>
 <p class='story'>Who is Oz? Oz is a magical werebat that inhabits Collider. He tells outsiders whether Collider is open for business or whether they should stay away from his evil prowess (he is suffering from a condition called sleepmurders). He is the mister of Collider, surrounded by his scandalous bunny mistresses. He only comes out to greet those who are worthy. Come hack with us and see if you get a visit from him.</p>
-<%= image_tag(@status+".png", class: "images") %>
+<%= image_tag(@status+".png", class: "images", id: "status") %>
     <h1 class='status'>Collider is <%=@status%>!</h1>
 <p class='credits'>A thrilling exposé by <a href="https://twitter.com/pvorozh" class='credits'>@pvorozh</a> and <a class='credits' href="https://twitter.com/jollyswagman12">@jollyswagman12</a></p>
-<%= image_tag("bunny.png", id: "bunny") %>
+<%= image_tag("bunny.png", id: "bunny", usemap: "#bunmap") %>
+<map id="bunmap" name="bunmap"><area shape="circle" alt="" title="" coords="43,81,3" />
+
+<%= image_tag("wreckbunny.png", id: "wreck") %>
 
 <script type="text/javascript">
 $(function() {
 	$('#bunny').hover(function (event) {
-	  var origsrc = $(this).attr('src');
-	        var src = '';
-	        if (origsrc == '/images/bunny.png') src = '/images/bunnyevil.png';
-	        if (origsrc == '/images/bunnyevil.png') src = '/images/bunny.png';
-	        $(this).attr('src', src);
+  		var origsrc = $(this).attr('src');
+        var src = '';
+        if (origsrc == '/images/bunny.png') src = '/images/bunnyevil.png';
+        if (origsrc == '/images/bunnyevil.png') src = '/images/bunny.png';
+        $(this).attr('src', src);
+	});
+	$('#bunmap').click(function (event) {
+		$("#wreck").css("top", -455);
+		$("#wreck").animate({top:0},1000).delay(500).animate({top:-455},1000);
 	});
 });
 </script>

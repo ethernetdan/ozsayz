@@ -33,3 +33,8 @@
     right: 0;
     bottom: 0;
  }
+
+ #wreck {
+ 	position: fixed;
+ 	top: -455;
+ }
