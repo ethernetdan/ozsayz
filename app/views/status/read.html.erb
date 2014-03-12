@@ -4,14 +4,14 @@
 <p class='story'>Who is Oz? Oz is a magical werebat that inhabits Collider. He tells outsiders whether Collider is open for business or whether they should stay away from his evil prowess (he is suffering from a condition called sleepmurders). He is the mister of Collider, surrounded by his scandalous bunny mistresses. He only comes out to greet those who are worthy. Come hack with us and see if you get a visit from him.</p>
 <%= image_tag(@status+".png", class: "images", id: "status") %>
     <h1 class='status'>Collider is <%=@status%>!</h1>
+<%= image_tag("womensday.jpg", class: "images") %>
 <p class='credits'>A thrilling exposé by <a href="https://twitter.com/pvorozh" class='credits'>@pvorozh</a> and <a class='credits' href="https://twitter.com/jollyswagman12">@jollyswagman12</a></p>
-<%= image_tag("bunny.png", id: "bunny", usemap: "#bunmap") %>
 <map id="bunmap" name="bunmap"><area shape="circle" alt="" title="" coords="43,81,3" /></map>
 <map id="arrowmap" name="arrowmap"><area shape="rect" alt="" title="" coords="608,82,645,121"	/></map>
 
 <%= image_tag("#", id: "wreck") %>
-<%= image_tag("#", id: "dance") %>
 
+<%= image_tag("dance.png", id: "dance") %>
 <script type="text/javascript">
 $(function() {
 	$('#bunny').hover(function (event) {
