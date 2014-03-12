@@ -1,16 +1,12 @@
 class StatusController < ApplicationController
 	def update
 		if params[:pass] == "hellocollider"
-			s = Status.last
-			if s == nil
-				s = Status.new
-			end
+			s = Status.new 	
 			if params[:open] == "1"
 				s.open = true
 			elsif params[:open] == "0"
 				s.open = false
 			end
-			s.stupid = SecureRandom.hex
 			s.save()
 			render :text => s.open
 		end 	

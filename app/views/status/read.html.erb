@@ -10,7 +10,7 @@
 <map id="arrowmap" name="arrowmap"><area shape="rect" alt="" title="" coords="608,82,645,121"	/></map>
 
 <%= image_tag("#", id: "wreck") %>
-<%= image_tag("dance.png", id: "dance") %>
+<%= image_tag("#", id: "dance") %>
 
 <script type="text/javascript">
 $(function() {
@@ -24,7 +24,7 @@ $(function() {
 	$('#arrowmap').click(function (event) {
 		$("#dance").attr('src', "/images/dance.png")
 		$("#dance").css("left", -515);
-		$("#dance").animate({left:450},3000).delay(200).animate({left:-515},3000);
+		$("#dance").animate({left:350},2000).delay(1200).animate({left:-515},3000);
 	});	
 	$('#bunmap').click(function (event) {
 		$("#wreck").attr('src', "/images/wreckbunny.png")
