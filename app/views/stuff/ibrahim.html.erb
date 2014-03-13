@@ -1,5 +1,5 @@
 <canvas id="stuff" width="827" height="550" class="images down"></canvas>
-
+<h1 class="status">Hover over</h1>
 
 
 
@@ -9,8 +9,10 @@ function randomSaying() {
 	var textArray = [
     ["What's cooking","good looking?"],
     ["How are YOU doing?", ""],
+    ["oh hey", ""],
     ["Mhhhhhhhhmmmmmmm", ""],
-    ["If your feeling down", "I can feel you up"]
+    ["If your feeling down", "I can feel you up"],
+    ['Our love is like dividing by zero', 'you cannot define it']
 
 	];
 	var randomNumber = Math.floor(Math.random()*textArray.length);
@@ -38,8 +40,8 @@ $(function() {
   		if (down) {
   			var saying = randomSaying();
   			context.drawImage(ibra_up, 0, 0);
-  			context.fillText(saying[0],350,100);
-  			context.fillText(saying[1],350,150);
+  			context.fillText(saying[0].toUpperCase(),310,100);
+  			context.fillText(saying[1].toUpperCase(),310,150);
   		}
   		else context.drawImage(ibra_down, 0, 0);
   		down = !down
