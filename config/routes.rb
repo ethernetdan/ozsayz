@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   #   resources :products
     root 'status#read'
     get 'update' => 'status#update'
+
+    get 'ibra' => 'stuff#ibrahim'
   # Example resource route with options:
   #   resources :products do
   #     member do

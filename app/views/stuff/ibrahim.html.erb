@@ -1,0 +1,51 @@
+<canvas id="stuff" width="827" height="550" class="images down"></canvas>
+
+
+
+
+
+<script type="text/javascript">
+function randomSaying() {
+	var textArray = [
+    ["What's cooking","good looking?"],
+    ["How are YOU doing?", ""],
+    ["Mhhhhhhhhmmmmmmm", ""],
+    ["If your feeling down", "I can feel you up"]
+
+	];
+	var randomNumber = Math.floor(Math.random()*textArray.length);
+
+	return textArray[randomNumber];
+}
+$(function() {
+	var canvas = document.getElementById('stuff');
+	var context = canvas.getContext('2d');
+	var ibra_down = new Image();
+	var ibra_up = new Image();
+
+	context.font = "55px Impact"
+	context.fillStyle = "#FFFFFF";
+
+	var down = true;
+
+    ibra_down.onload = function() {
+       context.drawImage(ibra_down, 0, 0	);
+    };
+    ibra_down.src = '/images/stuff/down.JPG';
+    ibra_up.src = '/images/stuff/up.JPG';
+
+    $('#stuff').hover(function (event) {
+  		if (down) {
+  			var saying = randomSaying();
+  			context.drawImage(ibra_up, 0, 0);
+  			context.fillText(saying[0],350,100);
+  			context.fillText(saying[1],350,150);
+  		}
+  		else context.drawImage(ibra_down, 0, 0);
+  		down = !down
+	});
+   
+
+	
+});
+</script>
